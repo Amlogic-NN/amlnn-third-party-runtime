@@ -31,16 +31,6 @@ We currently support two deployment paths:
 
 ## 🏗️ Architecture Overview
 
-### 🧠 NNSDK Path
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/2e01e9f5-9ff6-4ec1-8b78-533aba7a7c02" width="300" alt="NNSDK Architecture"/>
-  <br>
-  <em>Figure 1. Amlogic NNSDK deployment flow</em>
-</p>
-
----
-
 ### 🧠 MNN Path
 
 <p align="center">
@@ -53,17 +43,7 @@ We currently support two deployment paths:
 
 ## ⚡ Quick Start
 
-### 📌 1. NNSDK Development
-
-If your board does not support NPU and you choose **NNSDK** for development:  
-```bash
-# Refer to the official NNSDK documentation
-```
-📖 [NNSDK/README.md](https://github.com/Amlogic-NN/amlnn-multibackend/blob/main/NNSDK/README.md)
-
----
-
-### 📌 2. MNN Development
+### 📌 1. MNN Development
 
 If your board does not support NPU or you prefer the **MNN** backend:  
 ```bash
@@ -75,7 +55,7 @@ If your board does not support NPU or you prefer the **MNN** backend:
 
 ## 🧾 Typical Workflow
 
-1. Select backend: **NNSDK** (NPU/CPU/GPU) or **MNN** (CPU/GPU)  
+1. Select backend:  **MNN** (CPU/GPU)  
 2. Convert your model (e.g., TFLite, ONNX) to supported format  
 3. Push executable and model to Amlogic board  
 4. Run demo to validate  
@@ -103,6 +83,7 @@ It is intended for evaluation and development purposes with **Amlogic NN SDK**.
 <p align="center">
   Made with ❤️ for Embedded AI Development
 </p>
+
 
 
 
