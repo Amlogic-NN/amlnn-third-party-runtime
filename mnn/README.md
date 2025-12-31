@@ -1,3 +1,13 @@
+## 🏗️ Architecture Overview
+
+### 🧠 MNN Path
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/6fdf8ec0-f610-4e15-84b9-2ae6b09300c3" width="800" alt="MNN Architecture"/>
+  <br>
+  <em>Figure 2. MNN deployment flow</em>
+</p>
+
 ## 🚀 Quick Start (32-bit Board Example)
 
 ### 1. Copy Required Shared Libraries And Demo
