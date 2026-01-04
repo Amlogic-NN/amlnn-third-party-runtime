@@ -22,7 +22,7 @@ In addition to the official **NNSDK** (TFLite-based), we also support popular th
 
 Check out the following paths to deploy your models on the NPU using your preferred framework.
 
-👉 For official documentation and NPU support, please visit [Amlogic](https://www.amlogic.cn/).
+👉 For official documentation and NPU support, please visit [Amlogic](https://github.com/Amlogic-NN/amlnn-model-playground).
 
 We currently support multiple deployment paths:
 - **NNSDK path** — TensorFlow Lite–based deployment solution developed by Amlogic.  
