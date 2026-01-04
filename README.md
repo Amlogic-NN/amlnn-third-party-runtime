@@ -17,15 +17,18 @@
 
 ## 🧭 Introduction
 
-Amlogic provides multiple **AI deployment solutions** that support NPU, CPU, and GPU.  
-If your board supports **NPU**, you can directly use **NNSDK** for optimal performance.  
-If your board does not have an NPU, you can still deploy models on **CPU** or **GPU** with ease.
+Amlogic provides multiple **AI deployment solutions** that support NPU acceleration.  
+In addition to the official **NNSDK** (TFLite-based), we also support popular third-party inference frameworks running efficiently on **Amlogic NPU**.
+
+Check out the following paths to deploy your models on the NPU using your preferred framework.
 
 👉 For official documentation and NPU support, please visit [Amlogic](https://www.amlogic.cn/).
 
-We currently support two deployment paths:
+We currently support multiple deployment paths:
 - **NNSDK path** — TensorFlow Lite–based deployment solution developed by Amlogic.  
 - **MNN path** — Open-source inference framework developed by Alibaba.
+- **ExecuTorch path** — PyTorch's end-to-end solution for enabling on-device inference capabilities.
+- **ONNX Runtime path** — Cross-platform, high performance ML inferencing and training accelerator.
 
 ---
 
@@ -33,18 +36,31 @@ We currently support two deployment paths:
 ## ⚡ Quick Start
 
 ### 📌 1. MNN Development
-
-If your board does not support NPU or you prefer the **MNN** backend:  
+To deploy models using **MNN** with NPU acceleration:
 ```bash
 # Refer to the MNN deployment guide
 ```
-📖 [MNN/README.md](https://github.com/Amlogic-NN/amlnn-multibackend/blob/main/MNN/README.md)
+📖 [MNN/README.md](mnn/README.md)
+
+### 📌 2. ExecuTorch Development
+To deploy models using **ExecuTorch** with NPU acceleration:
+```bash
+# Refer to the ExecuTorch deployment guide
+```
+📖 [executorch/README.md](executorch/README.md)
+
+### 📌 3. ONNX Runtime Development
+To deploy models using **ONNX Runtime** with NPU acceleration:
+```bash
+# Refer to the ONNX Runtime deployment guide
+```
+📖 [onnxruntime/README.md](onnxruntime/README.md)
 
 ---
 
 ## 🧾 Typical Workflow
 
-1. Select backend:  **MNN** (CPU/GPU)  
+1. Select backend:  **MNN**, **ExecuTorch**, or **ONNX Runtime** (NPU/CPU/GPU)  
 2. Convert your model (e.g., TFLite, ONNX) to supported format  
 3. Push executable and model to Amlogic board  
 4. Run demo to validate  
