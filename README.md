@@ -2,7 +2,7 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Amlogic_logo.svg/500px-Amlogic_logo.svg.png" alt="Amlogic Logo" width="220"/>
 </p>
 
-<h1 align="center">Amlogic AI Software Development Kit</h1>
+<h1 align="center">Amlogic AI Third-Party Runtime</h1>
 
 <p align="center">
   🧠 Efficient AI Deployment for Amlogic Embedded Platforms  
@@ -25,10 +25,10 @@ Check out the following paths to deploy your models on the NPU using your prefer
 👉 For official documentation and NPU support, please visit [Amlogic](https://github.com/Amlogic-NN/amlnn-model-playground).
 
 We currently support multiple deployment paths:
-- **NNSDK path** — TensorFlow Lite–based deployment solution developed by Amlogic.  
 - **MNN path** — Open-source inference framework developed by Alibaba.
 - **ExecuTorch path** — PyTorch's end-to-end solution for enabling on-device inference capabilities.
 - **ONNX Runtime path** — Cross-platform, high performance ML inferencing and training accelerator.
+- **NNStreamer path** — Efficient and flexible stream pipeline for complex AI applications.
 
 ---
 
@@ -56,11 +56,18 @@ To deploy models using **ONNX Runtime** with NPU acceleration:
 ```
 📖 [onnxruntime/README.md](onnxruntime/README.md)
 
+### 📌 4. NNStreamer Development
+To deploy models using **NNStreamer** with NPU acceleration:
+```bash
+# Refer to the NNStreamer deployment guide
+```
+📖 [nnstreamer/README.md](nnstreamer/README.md)
+
 ---
 
 ## 🧾 Typical Workflow
 
-1. Select backend:  **MNN**, **ExecuTorch**, or **ONNX Runtime** (NPU/CPU/GPU)  
+1. Select backend:  **MNN**, **ExecuTorch**, **ONNX Runtime**, or **NNStreamer** (NPU/CPU/GPU)
 2. Convert your model (e.g., TFLite, ONNX) to supported format  
 3. Push executable and model to Amlogic board  
 4. Run demo to validate  
@@ -73,8 +80,11 @@ To deploy models using **ONNX Runtime** with NPU acceleration:
 This project references the following open-source work:
 
 - [MNN](https://github.com/alibaba/MNN)
+- [ExecuTorch](https://github.com/pytorch/executorch)
+- [ONNX Runtime](https://github.com/microsoft/onnxruntime)
+- [NNStreamer](https://github.com/nnstreamer/nnstreamer)
 
-We would like to thank the MNN team for their contributions to open-source AI infrastructure.
+We would like to thank the open-source community for their contributions to AI infrastructure.
 
 ---
 
