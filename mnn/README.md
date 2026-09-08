@@ -21,7 +21,7 @@ git checkout 3.2.4
 ​```sh
 <copy aml_mnn_mali_gpu.patch to MNN Path>
 patch -p1 < aml_mnn_mali_gpu.patch
-``
+```
 
 ### 3.  Build MNN
 #### 3.1 Get Toolchain (eg. YOCTO)
