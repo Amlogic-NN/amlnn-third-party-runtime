@@ -18,7 +18,8 @@ git checkout 3.2.4
 ```
 
 ### 2. Apply Amlogic Patch
-​```sh
+​
+```sh
 <copy aml_mnn_mali_gpu.patch to MNN Path>
 patch -p1 < aml_mnn_mali_gpu.patch
 ```
