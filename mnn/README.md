@@ -25,20 +25,19 @@ patch -p1 < aml_mnn_mali_gpu.patch
 ```
 
 ### 3.  Build MNN
-#### 3.1 Get Toolchain (eg. YOCTO)
+#### 3.1 Get Toolchain
 
 ```sh
 #32 bit toolchain
 mkdir toolchain;
 cd toolchain;
-<copy poky-glibc-x86_64-amlogic-bsp-armv7at2hf-neon-mesons7-bh201-5.15-a32-toolchain-4.0.20.sh to MNN/toolchain>
-fakeroot ./poky-glibc-x86_64-amlogic-bsp-armv7at2hf-neon-mesons7-bh201-5.15-a32-toolchain-4.0.20.sh
+<prepare your toolchain>
 ```
 
 #### 3.2 build MNN
 
 ```sh
-source <PATH OF MNN>/toolchain/environment-setup-armv7at2hf-neon-pokymllib32-linux-gnueabi
+source <PATH OF MNN>/toolchain/<your toolchain>
  
 export OECORE_TARGET_ARCH=armv7-a
 export CXXFLAGS=$(echo "$CXXFLAGS" | sed 's/-g//g')
