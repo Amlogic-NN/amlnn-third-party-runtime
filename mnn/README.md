@@ -18,7 +18,6 @@ git checkout 3.2.4
 ```
 
 ### 2. Apply Amlogic Patch
-​
 ```sh
 <copy aml_mnn_mali_gpu.patch to MNN Path>
 patch -p1 < aml_mnn_mali_gpu.patch
@@ -27,12 +26,7 @@ patch -p1 < aml_mnn_mali_gpu.patch
 ### 3.  Build MNN
 #### 3.1 Get Toolchain
 
-```sh
-#32 bit toolchain
-mkdir toolchain;
-cd toolchain;
-<prepare your toolchain>
-```
+please refer to chapter *<7.1 Install Compilation Toolchain >* https://github.com/Amlogic-NN/amlnn-toolkit/blob/main/doc/01_Amlogic_NPU_Quick_Start_guide_V0.1.pdf
 
 #### 3.2 build MNN
 
