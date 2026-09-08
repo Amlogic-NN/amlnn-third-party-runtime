@@ -20,11 +20,11 @@ git checkout 3.2.4
 ### 2. Apply Amlogic Patch
 
 ​```sh
-# copy aml_mnn_mali_gpu.patch to MNN Path
+#copy aml_mnn_mali_gpu.patch to MNN Path
 patch -p1 < aml_mnn_mali_gpu.patch
 ```
 
-### 3. Build MNN
+### 3.  Build MNN
 #### 3.1 Get Toolchain (eg. YOCTO)
 
 ```sh
@@ -33,10 +33,7 @@ mkdir toolchain;
 cd toolchain;
 # copy poky-glibc-x86_64-amlogic-bsp-armv7at2hf-neon-mesons7-bh201-5.15-a32-toolchain-4.0.20.sh to MNN/toolchain
 fakeroot ./poky-glibc-x86_64-amlogic-bsp-armv7at2hf-neon-mesons7-bh201-5.15-a32-toolchain-4.0.20.sh
-
 ```
-
-
 
 #### 3.2 build MNN
 
@@ -69,7 +66,7 @@ make -j16
 
 ### 4. Demo
 After compilation, the generated files **libMNN.so, timeProfile. out, benchmark. out**, etc. can be obtained from the compilation directory.
-#### 5.1 Run Demo
+#### 4.1 Run Demo
 ```sh
 ./timeProfile.out mobilenetv2-12.mnn 100 7 1x3x224x224 1 0
 Use extra forward type: 7
