@@ -1,0 +1,25 @@
+diff --git a/source/backend/opencl/core/runtime/OpenCLWrapper.cpp b/source/backend/opencl/core/runtime/OpenCLWr
+apper.cpp
+index 0b902fd6..c9ae93f1 100644
+--- a/source/backend/opencl/core/runtime/OpenCLWrapper.cpp
++++ b/source/backend/opencl/core/runtime/OpenCLWrapper.cpp
+@@ -57,6 +57,7 @@ bool OpenCLSymbols::LoadOpenCLLibrary() {
+     #endif
+     #elif defined(__linux__)
+         "/usr/lib/libOpenCL.so",
++        "/usr/lib/libMali.so",
+         "/usr/local/lib/libOpenCL.so",
+         "/usr/local/lib/libpocl.so",
+         "/usr/lib64/libOpenCL.so",
+diff --git a/source/backend/vulkan/runtime/vulkan_wrapper.cpp b/source/backend/vulkan/runtime/vulkan_wrapper.cpp
+index eea42f35..e5258ab2 100644
+--- a/source/backend/vulkan/runtime/vulkan_wrapper.cpp
++++ b/source/backend/vulkan/runtime/vulkan_wrapper.cpp
+@@ -36,6 +36,7 @@ int InitVulkanOnce(void) {
+     "vulkan-1.dll",
+ #endif
+     "libvulkan.so",
++    "libvulkan.so.1",
+ #if defined(__APPLE__) || defined(__MACOSX)
+     "/usr/local/lib/libvulkan.dylib",// For mac install vk driver
+ #endif
