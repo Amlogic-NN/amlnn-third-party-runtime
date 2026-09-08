@@ -33,11 +33,13 @@ please refer to chapter *<7.1 Install Compilation Toolchain >* https://github.co
 ```sh
 source <PATH OF MNN>/toolchain/<your toolchain>
  
+#Select OECORE_TARGET-ARCH based on your toolchain
 export OECORE_TARGET_ARCH=armv7-a
+
 export CXXFLAGS=$(echo "$CXXFLAGS" | sed 's/-g//g')
 export CFLAGS=$(echo "$CXXFLAGS" | sed 's/-g//g')
  
-mkdir build_yocto_32 && cd build_yocto_32
+mkdir build && cd build
  
 cmake .. \
 -DCMAKE_TOOLCHAIN_FILE=${OE_CMAKE_TOOLCHAIN_FILE} \
