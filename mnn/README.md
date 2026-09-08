@@ -18,11 +18,10 @@ git checkout 3.2.4
 ```
 
 ### 2. Apply Amlogic Patch
-
 ​```sh
-#copy aml_mnn_mali_gpu.patch to MNN Path
+<copy aml_mnn_mali_gpu.patch to MNN Path>
 patch -p1 < aml_mnn_mali_gpu.patch
-```
+``
 
 ### 3.  Build MNN
 #### 3.1 Get Toolchain (eg. YOCTO)
@@ -31,7 +30,7 @@ patch -p1 < aml_mnn_mali_gpu.patch
 #32 bit toolchain
 mkdir toolchain;
 cd toolchain;
-# copy poky-glibc-x86_64-amlogic-bsp-armv7at2hf-neon-mesons7-bh201-5.15-a32-toolchain-4.0.20.sh to MNN/toolchain
+<copy poky-glibc-x86_64-amlogic-bsp-armv7at2hf-neon-mesons7-bh201-5.15-a32-toolchain-4.0.20.sh to MNN/toolchain>
 fakeroot ./poky-glibc-x86_64-amlogic-bsp-armv7at2hf-neon-mesons7-bh201-5.15-a32-toolchain-4.0.20.sh
 ```
 
