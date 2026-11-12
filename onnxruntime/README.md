@@ -26,16 +26,11 @@ generated ADLA file does not need to be transferred manually.
 | Operating systems | Android, Buildroot, Armbian/Yocto |
 | Architectures | 32-bit ARM and 64-bit AArch64 |
 | NPU Driver | 2.0.0 or later |
+| NNSDK2 | 1.1.0 |
+| `aml_compiler_core` | 1.0.2 |
+| ADLA Compiler (`libcompiler_adla.so`) | 3.5.3 |
 
 ## Quick Start
-
-### Runtime Versions
-
-| Component | Version | Version Confirmation |
-| --- | --- | --- |
-| NNSDK2 | 1.1.0 | Check the NNSDK version string in the `libnnsdk.so` installed on the target device. |
-| `aml_compiler_core` | 1.0.2 | Refer to the vendor release notes. Applications can call the public `AmlCompilerCoreGetVersion()` API to query the version of the loaded library. |
-| ADLA Compiler (`libcompiler_adla.so`) | 3.5.3 | The online conversion log should contain `Compiler Config: Compiler Version: 3.5.3`. |
 
 ### Quick Validation
 
@@ -210,19 +205,65 @@ for the selected operating system and architecture.
 
 The following ONNX models are supported by this release.
 
-| Application category | Model family | Supported models |
-| --- | --- | --- |
-| Image classification and recognition | AlexNet / CaffeNet | `bvlcalexnet-7.onnx`, `caffenet-7.onnx` |
-| Image classification and recognition | DenseNet / EfficientNet | `densenet-7.onnx`, `efficientnet_b0.onnx` |
-| Image classification and recognition | GoogLeNet / Inception | `googlenet-7.onnx`, `inception-v1-7.onnx` |
-| Image classification and recognition | MobileNet | `mobilenet_v2.onnx`, `mobilenetv2-7.onnx` |
-| Image classification and recognition | ResNet | `resnet18.onnx`, `resnet18-v1-7.onnx`, `resnet18-v2-7.onnx`<br>`resnet34-v1-7.onnx`, `resnet34-v2-7.onnx`<br>`resnet50-v1-12.onnx`, `resnet50-v1-7.onnx`, `resnet50-v2-7.onnx`<br>`resnet101-v1-7.onnx`, `resnet101-v2-7.onnx`<br>`resnet152-v1-7.onnx`, `resnet152-v2-7.onnx` |
-| Image classification and recognition | ShuffleNet / SqueezeNet | `shufflenet-v2-10.onnx`, `squeezenet1.0-12.onnx`, `squeezenet1.1-7.onnx` |
-| Image classification and recognition | VGG | `vgg16-7.onnx`, `vgg19-7.onnx`, `vgg19-bn-7.onnx` |
-| Image classification and recognition | Other | `mnist-7.onnx`, `scene-middle.onnx`, `age_googlenet.onnx`, `emotion-ferplus-7.onnx`, `edge256_ped_reid_mbv1_20200815.onnx` |
-| Image segmentation | Human Segmentation | `paddle_human_seg.onnx` |
-| Object detection | YOLOv2 | `yolov2-coco-9.onnx` |
-| Basic operator validation | Mul | `hpmul.onnx` |
+<table>
+  <thead>
+    <tr>
+      <th>Application category</th>
+      <th>Model family</th>
+      <th>Supported models</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="8"><strong>Image classification and recognition</strong></td>
+      <td>AlexNet / CaffeNet</td>
+      <td><code>bvlcalexnet-7.onnx</code><br><code>caffenet-7.onnx</code></td>
+    </tr>
+    <tr>
+      <td>DenseNet / EfficientNet</td>
+      <td><code>densenet-7.onnx</code><br><code>efficientnet_b0.onnx</code></td>
+    </tr>
+    <tr>
+      <td>GoogLeNet / Inception</td>
+      <td><code>googlenet-7.onnx</code><br><code>inception-v1-7.onnx</code></td>
+    </tr>
+    <tr>
+      <td>MobileNet</td>
+      <td><code>mobilenet_v2.onnx</code><br><code>mobilenetv2-7.onnx</code></td>
+    </tr>
+    <tr>
+      <td>ResNet</td>
+      <td><code>resnet18.onnx</code>, <code>resnet18-v1-7.onnx</code>, <code>resnet18-v2-7.onnx</code><br><code>resnet34-v1-7.onnx</code>, <code>resnet34-v2-7.onnx</code><br><code>resnet50-v1-12.onnx</code>, <code>resnet50-v1-7.onnx</code>, <code>resnet50-v2-7.onnx</code><br><code>resnet101-v1-7.onnx</code>, <code>resnet101-v2-7.onnx</code><br><code>resnet152-v1-7.onnx</code>, <code>resnet152-v2-7.onnx</code></td>
+    </tr>
+    <tr>
+      <td>ShuffleNet / SqueezeNet</td>
+      <td><code>shufflenet-v2-10.onnx</code><br><code>squeezenet1.0-12.onnx</code><br><code>squeezenet1.1-7.onnx</code></td>
+    </tr>
+    <tr>
+      <td>VGG</td>
+      <td><code>vgg16-7.onnx</code><br><code>vgg19-7.onnx</code><br><code>vgg19-bn-7.onnx</code></td>
+    </tr>
+    <tr>
+      <td>Other</td>
+      <td><code>mnist-7.onnx</code>, <code>scene-middle.onnx</code><br><code>age_googlenet.onnx</code>, <code>emotion-ferplus-7.onnx</code><br><code>edge256_ped_reid_mbv1_20200815.onnx</code></td>
+    </tr>
+    <tr>
+      <td><strong>Image segmentation</strong></td>
+      <td>Human Segmentation</td>
+      <td><code>paddle_human_seg.onnx</code></td>
+    </tr>
+    <tr>
+      <td><strong>Object detection</strong></td>
+      <td>YOLOv2</td>
+      <td><code>yolov2-coco-9.onnx</code></td>
+    </tr>
+    <tr>
+      <td><strong>Basic operator validation</strong></td>
+      <td>Mul</td>
+      <td><code>hpmul.onnx</code></td>
+    </tr>
+  </tbody>
+</table>
 
 ## Test Status
 
