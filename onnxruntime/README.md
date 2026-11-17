@@ -8,6 +8,10 @@ an ADLA model and executed on the Amlogic NPU.
 
 The deployment flow is as follows:
 
+<p align="center">
+  <img src="onnxruntime.assets/onnxruntime_workflow.png" alt="ONNX Runtime AMLNN workflow">
+</p>
+
 1. The application submits a floating-point ONNX model and input tensors to ONNX Runtime.
 2. ONNX Runtime parses the model and assigns supported operators to the AMLNN EP.
 3. The AMLNN EP calls Core/Compiler to convert the model to ADLA on the target device.
